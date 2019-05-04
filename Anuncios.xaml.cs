@@ -51,6 +51,7 @@ namespace Appf
             var json = await web.GetStringAsync(url);
 
             var anuncios = JsonConvert.DeserializeObject<List<Anuncio>>(json);
+            Items.Clear();
 
             foreach (var anuncio in anuncios)
             {
