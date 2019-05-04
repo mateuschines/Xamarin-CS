@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Appf.Page3">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+        <Button Text="Fechar" BackgroundColor="Black" TextColor="White" Clicked="Handle_Clicked" VerticalOptions="Center" HorizontalOptions="Center">
+        </Button>
+        
+        <!-- 
+        <Button Text="Sair" BackgroundColor="Red" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding Sair}">
+        </Button> -->
+        <Button Text="Página 4" Clicked="Handle_Clicked">
+        </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

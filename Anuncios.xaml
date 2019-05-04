@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Appf.Anuncios">
+    <StackLayout>
+    <SearchBar Placeholder="Busca" x:Name="buscas" SearchButtonPressed="Handle_SearchButtonPressed"></SearchBar>    
+    <ListView RowHeight="60" HasUnevenRows="false" x:Name="MyListView" ItemsSource="{Binding Items}" ItemTapped="Handle_ItemTapped" CachingStrategy="RecycleElement">
+        
+        <!--Built in Cells--><!--
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Titulo}" />
+            </DataTemplate>
+        </ListView.ItemTemplate> -->
+        <!--Custom View Cells-->
+        
+    <ListView.ItemTemplate>
+      <DataTemplate>
+    <!--    <ImageCell ImageSource="{Binding Src}"
+                   Text="{Binding Titulo}"
+                   Detail="{Binding Valor}"> 
+        </ImageCell> -->
+        <ViewCell>
+            <Grid Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="8*"></ColumnDefinition>         
+                </Grid.ColumnDefinitions>
+                        
+                <Image Grid.Column="0" StyleClass="Circle" Source="{Binding Src}"></Image>
+                <StackLayout Grid.Column="1">
+                    <Label Text="{Binding Titulo}" FontAttributes="Bold" FontSize="Medium" LineBreakMode="TailTruncation"></Label>
+                    <Label Text="{Binding Valor}" TextColor="Red" FontAttributes="Italic"></Label>
+                </StackLayout>            
+            </Grid>            
+        </ViewCell>            
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    
+    </ListView>
+   </StackLayout>
+</ContentPage>
